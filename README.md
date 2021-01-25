@@ -2,6 +2,11 @@
 
 整合了常见的第三方库的连接，便于开箱即用
 
+## 使用方式
+```
+go get github.com/dabuge/gflib
+```
+
 ## MongoDB 连接
 
 文档： [mongodb.md](docs/mongodb.md) 
