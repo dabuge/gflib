@@ -56,10 +56,10 @@ func Client(name ...string) *saws {
 				saws.Config = gconv.Map(v)
 				return saws
 			} else {
-				panic(fmt.Sprintf(`configuration for redis not found for group "%s"`, key))
+				panic(fmt.Sprintf(`configuration for aws not found for group "%s"`, key))
 			}
 		} else {
-			panic(fmt.Sprintf(`incomplete configuration for redis: "redis" node not found in config file "%s"`, config.FilePath()))
+			panic(fmt.Sprintf(`incomplete configuration for aws: "aws" node not found in config file "%s"`, config.FilePath()))
 		}
 		return nil
 	}).(*saws)

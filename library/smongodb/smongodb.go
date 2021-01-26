@@ -54,10 +54,10 @@ func Conn(name ...string) *mongoConnectPool {
 				mongoConPool.mongoConnect()
 				return mongoConPool
 			} else {
-				panic(fmt.Sprintf(`configuration for redis not found for group "%s"`, key))
+				panic(fmt.Sprintf(`configuration for mongodb not found for group "%s"`, key))
 			}
 		} else {
-			panic(fmt.Sprintf(`incomplete configuration for redis: "redis" node not found in config file "%s"`, config.FilePath()))
+			panic(fmt.Sprintf(`incomplete configuration for mongodb: "mongodb" node not found in config file "%s"`, config.FilePath()))
 		}
 		return nil
 	}).(*mongoConnectPool)
