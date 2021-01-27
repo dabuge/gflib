@@ -14,7 +14,7 @@ aws:
     RoleSessionName: "project-name"
     Region: "us-west-2"
     # 使用 S3 时需要的桶名称
-    XshoppyLiquidTemplatesBucket: "s3-bucket-dev"
+    Bucket: "s3-bucket-dev"
   # 静态资源的 s3
   static_storage:
     AccessKey: "AKFFFFFFFFFFFFFFF"
@@ -46,7 +46,7 @@ awsClient := saws.Client()
 var sess = awsClient.GetSessionFromSts()
 svc := s3.New(sess)
 input := &s3.GetObjectInput{
-    Bucket: awsClient.GetConfigString("XshoppyLiquidTemplatesBucket"),
+    Bucket: awsClient.GetConfigString("Bucket"),
     Key:    aws.String("example/ss.zip"),
 }
 result, err := svc.GetObject(input)
